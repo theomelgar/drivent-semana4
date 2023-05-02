@@ -275,7 +275,7 @@ describe('PUT /booking/:bookingId', () => {
       expect(response.status).toEqual(httpStatus.NOT_FOUND);
     });
 
-    it('should respond with status 403 when ticket has invalid', async () => {
+    it('should respond with status 403 when ticket is invalid', async () => {
       const user = await createUser();
       const token = await generateValidToken(user);
       const enrollment = await createEnrollmentWithAddress(user);
@@ -330,7 +330,7 @@ describe('PUT /booking/:bookingId', () => {
       expect(response.status).toBe(httpStatus.FORBIDDEN);
     });
 
-    it('should respond with status 20 and update booking', async () => {
+    it('should respond with status 200 and update booking', async () => {
       const user = await createUser();
       const token = await generateValidToken(user);
       const enrollment = await createEnrollmentWithAddress(user);
